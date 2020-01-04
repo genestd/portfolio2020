@@ -1,0 +1,12 @@
+.nav-menu {
+    font-family: 'IBM Plex Sans', monospace;
+    font-size: 24px;
+}
+
+.nav-item {
+    display: block;
+    padding: 20px 0;
+    &:visited {
+        color: inherit;
+    }
+}
