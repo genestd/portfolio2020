@@ -16,7 +16,7 @@ const App = () => {
   const closeDrawer = () => state.isDrawerOpen ? dispatch({ type: actions.TOGGLE_DRAWER}) : null
 
   return (
-    <div className={`app`}>
+    <div className={`app ${state.theme}-theme`}>
       <div className='nav-container'>
         <Menu menuitems={routes} />
       </div>
