@@ -1,0 +1,67 @@
+.resume {
+    padding: 40px;
+}
+
+.resume-name {
+    font-size: 40px;
+    text-align: center;
+}
+
+.resume-details {
+    display: flex;
+    justify-content: center;
+}
+
+.resume-detail-full {
+    padding: 0 10px;
+}
+
+.divider {
+    width: 80%;
+    border-bottom: 1px solid;
+    margin: 0 auto
+}
+
+.section {
+    padding: 20px 0;
+    line-height: 1.4;
+}
+
+.section-data {
+    ul {
+        margin: 0
+    }
+}
+
+.section-title {
+    font-size: 28px;
+    font-weight: 700;
+    padding-bottom: 20px;
+}
+
+.section-subtitle {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.section-detail {
+    padding-left: 20px;
+}
+
+.list-title {
+    font-weight: bold;
+}
+
+@media screen and (max-width: 768px) {
+    .resume {
+        padding: 20px;
+    }
+
+    .resume-details {
+        flex-direction: column;
+        align-items: center;
+    }
+    .resume-detail-full {
+        display: none;
+    }
+}

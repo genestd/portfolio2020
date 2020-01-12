@@ -9,6 +9,7 @@ import Home from './pages/Home'
 import Blog from './pages/Blog'
 import Projects from './pages/Projects'
 import Contact from './pages/Contact'
+import Resume from './pages/Resume'
 import Error from './pages/Error'
 import routes from './routes'
 import './App.scss';
@@ -20,23 +21,27 @@ const App = () => {
 
   return (
     <div className={`app ${state.theme}-theme`}>
-      <div className='nav-container'>
-        <FontAwesomeIcon className='nav-icon' icon={state.theme === 'dark' ? faSun : faMoon} onClick={toggleTheme} />
-        <Menu menuitems={routes} />
+      <div className='sidebar'>
+        <div className='nav-container'>
+          <FontAwesomeIcon className='nav-icon' icon={state.theme === 'dark' ? faSun : faMoon} onClick={toggleTheme} />
+          <Menu menuitems={routes} />
+        </div>
+        <div className='nav-container-responsive'>
+          <i className='material-icons pointer' onClick={() => dispatch({ type: actions.TOGGLE_DRAWER })}>menu</i>
+          <FontAwesomeIcon icon={state.theme === 'dark' ? faSun : faMoon} onClick={toggleTheme} />
+        </div>
+        <div className='nav-drawer' style={{ display: state.isDrawerOpen ? 'block' : 'none' }}>
+          <Menu menuitems={routes} clickHandler={closeDrawer} />
+        </div>
       </div>
-      <div className='nav-container-responsive'>
-        <i className='material-icons pointer' onClick={() => dispatch({ type: actions.TOGGLE_DRAWER })}>menu</i>
-        <FontAwesomeIcon icon={state.theme === 'dark' ? faSun : faMoon} onClick={toggleTheme} />
-      </div>
-      <div className='nav-drawer' style={{ display: state.isDrawerOpen ? 'block' : 'none' }}>
-        <Menu menuitems={routes} clickHandler={closeDrawer} />
-      </div>
+
       <div className='main-container'>
         <Switch>
           <Route path='/home' component={Home} />
           <Route path='/blog' component={Blog} />
           <Route path='/projects' component={Projects} />
           <Route path='/contact' component={Contact} />
+          <Route path='/resume' component={Resume} />
           <Route path='*' component={Error} />
         </Switch>
       </div>

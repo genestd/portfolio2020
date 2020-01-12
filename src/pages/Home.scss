@@ -55,24 +55,29 @@
     clip-path: polygon(0 0, 0 100%, 40% 60%, 40% 40%);
     background-color: var(--bg1);
     color: var(--font-color);
-    z-index: 1;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     padding-left: 8%;
     font-size: 24px;
+    pointer-events: auto;
+    transition: opacity 1s ease-in-out;
+    opacity: 0;
+    &:hover {
+        opacity: 1;
+    }
 }
 
 .home-left-cover {
     clip-path: polygon(0 0, 0 100%, 40% 60%, 40% 40%);
     background-color: var(--bg2);
     color: var(--font-color);
-    z-index: 2;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     padding-left: 15%;
     transition: opacity 1s ease-in-out;
+    opacity: 1;
     &:hover {
         opacity: 0;
     }

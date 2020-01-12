@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { faAws, faNode, faReact } from "@fortawesome/free-brands-svg-icons"
 import { faRobot } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
@@ -19,7 +20,11 @@ export default () => (
             <div className='secondary-text'>Full Stack Developer</div>
             <div className='secondary-text'>Lake Oswego, OR</div>
         </div>
-        <div className='full-screen home-left'>My resume</div>
+        <div className='full-screen home-left'>
+            <Link className='nav-item' to='/resume'>
+                My resume
+            </Link>
+        </div>
         <div className='full-screen home-bottom'>
             <div className='left-shape'></div>
             <div className='right-shape'></div>
