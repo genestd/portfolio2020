@@ -1,0 +1,39 @@
+.blog-container {
+    overflow: scroll;
+    display: flex;
+    flex-direction: column;
+}
+
+.blog-body {
+    overflow: scroll;
+    padding: 40px;
+}
+
+.blog-titleblock {
+    padding: 10px 0;
+}
+
+.blog-title {
+    font-size: 32px;
+}
+
+.blog-author {
+    font-size: 24px;
+}
+
+.blog-date {
+    font-size: 18px;
+}
+
+@media screen and (max-width: 400px) {
+    .blog-body {
+        padding: 20px;
+    }
+    .blog-titleblock {
+        display: flex;
+        flex-direction: column;
+    }
+    .blog-title {
+        font-size: 32px;
+    }
+}

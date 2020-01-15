@@ -72,12 +72,13 @@
 
 .main-container {
   position: relative;
+  display: flex;
+  flex-direction: column;
   width: 100%;
   min-height: 100vh;
   background-color: var(--bg2);
   color: var(--font-color);
   height: 100vh;
-  overflow: scroll;
 }
 
 .nav-icon {
