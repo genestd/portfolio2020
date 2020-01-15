@@ -1,5 +1,6 @@
 .resume {
     padding: 40px;
+    overflow: scroll;
 }
 
 .resume-name {
@@ -19,7 +20,8 @@
 .divider {
     width: 80%;
     border-bottom: 1px solid;
-    margin: 0 auto
+    margin: 0 auto;
+    padding-top: 10px;
 }
 
 .section {
