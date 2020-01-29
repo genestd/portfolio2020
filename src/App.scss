@@ -1,5 +1,5 @@
 .app {
-  font-family: 'IBM Plex Sans', monospace;
+  font-family: 'IBM Plex Mono', Roboto, monospace;
   display: flex;
   flex-direction: row;
   min-height: 100vh;
@@ -97,6 +97,10 @@
 @media screen and (max-width: 768px) {
   .app {
     flex-direction: column;
+  }
+
+  .fullscreen-only {
+    display: none;
   }
 
   .sidebar {
