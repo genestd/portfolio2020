@@ -1,0 +1,203 @@
+.full-screen {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    font-size: 40px;
+}
+
+.home-icon {
+    padding: 5px;
+}
+
+.home-avatar {
+    margin: auto;
+    font-size: 80px;
+}
+
+.home-top {
+    clip-path: polygon(0 0, 100% 0, 60% 40%, 40% 40%);
+    background-color: var(--bg1);
+    color: var(--font-color);
+      z-index: 1;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 10%;
+}
+
+.home-top-cover {
+    clip-path: polygon(0 0, 100% 0, 60% 40%, 40% 40%);
+    background-color: var(--bg2);
+      display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 15%;
+    z-index: 2;
+    transition: opacity 1s ease-in-out;
+    &:hover {
+       opacity: 0;
+    }
+}
+
+.primary-text {
+    font-size: 36px;
+}
+.secondary-text {
+    font-size: 28px;
+}
+
+.home-left {
+    clip-path: polygon(0 0, 0 100%, 40% 60%, 40% 40%);
+    background-color: var(--bg1);
+    color: var(--font-color);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 8%;
+    font-size: 24px;
+    pointer-events: auto;
+    transition: opacity 1s ease-in-out;
+    opacity: 0;
+    &:hover {
+        opacity: 1;
+    }
+}
+
+.home-left-cover {
+    clip-path: polygon(0 0, 0 100%, 40% 60%, 40% 40%);
+    background-color: var(--bg2);
+    color: var(--font-color);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 15%;
+    transition: opacity 1s ease-in-out;
+    opacity: 1;
+    &:hover {
+        opacity: 0;
+    }
+}
+
+.home-bottom {
+    clip-path: polygon(0 100%, 100% 100%, 60% 60%, 40% 60%);
+    background-color: var(--bg1);
+    color: var(--font-color);
+    z-index: 1;
+    font-size: 16px;
+    overflow: hidden;
+    height: 100%;
+}
+
+.left-shape{
+    shape-outside: polygon(0 100%, 80% 60%, 100% 60%, 100% 0, 0 0);
+    shape-margin: 30px;
+    float: left;
+    width: 50%;
+    height: 100%;
+}
+
+.right-shape {
+    shape-outside: polygon(100% 100%, 20% 60%, 0 60%, 0 0, 100% 0);
+    shape-margin: 30px;
+    float: right;
+    width: 50%;
+    height: 100%;
+}
+
+.shaped-text {
+    text-align: center;
+}
+
+.home-bottom-cover {
+    clip-path: polygon(0 100%, 100% 100%, 60% 60%, 40% 60%);
+    background-color: var(--bg2);
+    color: var(--font-color);
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 15%;
+    transition: opacity 1s ease-in-out;
+    &:hover {
+        opacity: 0;
+    }
+}
+
+.home-right {
+    clip-path: polygon(100% 0, 100% 100%, 60% 60%, 60% 40%);
+    background-color: var(--bg1);
+    color: var(--font-color);
+    z-index: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 8%;
+}
+
+.home-right-cover {
+    clip-path: polygon(100% 0, 100% 100%, 60% 60%, 60% 40%);
+    background-color: var(--bg2);
+    color: var(--font-color);
+    z-index: 2;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 12%;
+    transition: opacity 1s ease-in-out;
+    &:hover {
+        opacity: 0;
+    }
+}
+
+.center-div {
+    width: 20%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: relative;
+    display: flex;
+}
+
+.image-centered {
+    max-height: 100%;    
+    max-width: 100%;
+}
+
+@media screen and (max-width: 400px) {
+    .full-screen {
+        font-size: 32px;
+    }
+
+    .home-right {
+        font-size: 24px;
+    }
+
+    .home-left {
+        font-size: 14px;
+        padding-right: 4%;
+    }
+
+    .home-bottom {
+        font-size: 14px;
+    }
+
+    .left-shape, .right-shape {
+        shape-margin: 20px;
+    }
+
+    .primary-text {
+        font-size: 32px;
+
+    }
+    .secondary-text {
+        font-size: 20px;
+    }
+    .home-avatar {
+        font-size: 56px;
+    }
+}
