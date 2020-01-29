@@ -21,7 +21,7 @@ export default props => {
     }, [])
 
     return (
-        <div className={`header${scrolled ? '-scrolled' : ''}`}>
+        <div className={`fullscreen-only header${scrolled ? '-scrolled' : ''}`}>
             {props.children}
         </div>
     )

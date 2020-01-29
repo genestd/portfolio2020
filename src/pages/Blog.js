@@ -9,7 +9,7 @@ export default () => {
         <>
             <div className='blog-container' id='blog-container'>
                 <Header containerId='blog-body'>
-                    My Blog
+                    Words, ideas...Things of that nature.
                 </Header>
                 <div className='blog-body' id='blog-body'>
                     {data.map(entry => {
