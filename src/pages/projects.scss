@@ -1,0 +1,91 @@
+.grid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    overflow-y: auto;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+  }
+
+  .grid-item {
+      flex: 1 0 32%;
+      margin: 10px;
+  }
+  
+  .project, .project-maximized {
+    height: 400px;
+    background-color: var(--bg1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 50%;
+    box-shadow: 7px 7px 5px 0px var(--bg0);
+    transition: transform .4s ease-in-out;
+    //margin-right: 10px;
+    //margin-bottom: 10px;
+  }
+
+  .project-maximized {
+    height: calc(100% - 25px);
+    width: calc(100% - 25px);
+  }
+  .project-selected {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: red;
+    z-index: 10;
+    opacity: 1;
+    transition: all .4s ease-in-out;
+  }
+  .project-hidden {
+    position: absolute;
+    top: 25%;
+    bottom: 25%;
+    left: 25%;
+    right: 25%;
+    opacity: 0;
+    z-index: -1;
+    transition: all .4s ease-in-out;
+  }
+
+
+  .project:last-of-type {
+   //   margin-right: 0;
+  }
+
+  .project-title {
+    font-size: 40px;
+  }
+
+  .project-subtitle {
+      text-align: center;
+      font-size: 20px;
+      font-family: 'IBM Plex Mono';
+  }
+  
+  .tags {
+      position: absolute;
+      top: 15px;
+      right: 10px;
+  }
+
+  .tag {
+      background-color: var(--bg2);
+      border-radius: 4px;
+      margin: 0 4px;
+      padding: 6px;
+  }
+
+  .close {
+    position: absolute;
+    top: 15px;
+    left: 10px;
+    z-index: 11; 
+  }
