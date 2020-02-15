@@ -15,7 +15,7 @@
   }
   
   .project, .project-maximized {
-    height: 400px;
+    height: calc(50% - 25px);
     background-color: var(--bg1);
     display: flex;
     flex-direction: column;
@@ -30,16 +30,20 @@
   }
 
   .project-maximized {
-    height: calc(100% - 25px);
-    width: calc(100% - 25px);
+    height: calc(100% - 105px);
+    width: calc(100% - 105px);
+    background-color: var(--bg0);
+    justify-content: space-around;
+    padding: 40px;
+    overflow: scroll;
   }
+
   .project-selected {
     position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: red;
     z-index: 10;
     opacity: 1;
     transition: all .4s ease-in-out;
@@ -61,7 +65,8 @@
   }
 
   .project-title {
-    font-size: 40px;
+    font-size: 35px;
+    text-align: center;
   }
 
   .project-subtitle {
@@ -89,3 +94,42 @@
     left: 10px;
     z-index: 11; 
   }
+
+  .project-icon {
+    font-size: 28px;
+  }
+
+  .tag-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 10px 0;
+  }
+
+  .tag-tech {
+    background-color: var(--bg1);
+    border-radius: 4px;
+    padding: 6px;
+    margin: 0 3px;
+
+  }
+
+  @media screen and (max-width: 768px) {
+    .grid {
+      height: calc(100vh -80px);
+    }
+
+    .project {
+      height: calc((50% ) - 25px);
+    }
+
+    .project-title {
+      font-size: 28px;
+    }
+
+    .tag {
+      font-size: 12px;
+      padding: 4px;
+    }
+}
