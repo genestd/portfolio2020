@@ -1,0 +1,69 @@
+# Welcome to Serverless!
+#
+# This file is the main config file for your service.
+# It's very minimal at this point and uses default values.
+# You can always add more config options for more control.
+# We've included some commented out config examples here.
+# Just uncomment any of them to get that config option.
+#
+# For full config options, check the docs:
+#    docs.serverless.com
+#
+# Happy Coding!
+
+service: portfolio-2020
+plugins:
+
+custom:
+  accountId: 514943277137
+
+package:
+  individually: true
+
+# You can pin your service to only deploy with a specific Serverless version
+# Check out our docs for more details
+# frameworkVersion: "=X.X.X"
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+
+# you can overwrite defaults here
+  stage: ${opt:stage, 'dev'}
+  region: us-west-2
+
+# you can add statements to the Lambda function's IAM Role here
+  iamRoleStatements:
+      - Effect: Allow
+        Action:
+          - dynamodb:GetItem
+          - dynamodb:BatchGetItem
+          - dynamodb:Query
+          - dynamodb:Scan
+          - dynamodb:PutItem
+          - dynamodb:UpdateItem
+          - dynamodb:DeleteItem
+          - dynamodb:BatchWriteItem
+        Resource:
+          - arn:aws:dynamodb:*:*:table/${opt:stage}Portfolio2020
+
+#
+resources:
+  Resources:
+    Portfolio2020Table:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: ${opt:stage}Portfolio2020
+        AttributeDefinitions:
+          - AttributeName: recordType
+            AttributeType: S
+          - AttributeName: recordId
+            AttributeType: S
+        KeySchema:
+          - AttributeName: recordType
+            KeyType: HASH
+          - AttributeName: recordId # uuid#datetime
+            KeyType: RANGE
+        ProvisionedThroughput:
+          ReadCapacityUnits: 2
+          WriteCapacityUnits: 2
